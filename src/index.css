@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI-Integrated Web Developer Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+    
+    /* Card System */
+    --card: 223 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --card-hover: 223 47% 15%;
+    
+    /* Popover */
+    --popover: 223 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    
+    /* Brand Colors - AI Tech Aesthetic */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 84% 4.9%;
+    --primary-glow: 217 91% 70%;
+    
+    /* Secondary Tech Blue */
+    --secondary: 223 47% 15%;
+    --secondary-foreground: 210 40% 98%;
+    
+    /* Muted Elements */
+    --muted: 223 47% 15%;
+    --muted-foreground: 215 20% 65%;
+    
+    /* Accent Purple for AI Elements */
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+    
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142 71% 45%;
+    --warning: 48 96% 53%;
+    
+    /* UI Elements */
+    --border: 223 47% 20%;
+    --input: 223 47% 15%;
+    --ring: 217 91% 60%;
+    
+    /* Layout */
+    --radius: 0.75rem;
+    
+    /* AI-Tech Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
+    --gradient-secondary: linear-gradient(135deg, hsl(223 47% 15%), hsl(223 47% 25%));
+    --gradient-hero: linear-gradient(135deg, hsl(222 84% 4.9%) 0%, hsl(223 47% 11%) 50%, hsl(217 91% 60% / 0.1) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(223 47% 11%), hsl(223 47% 13%));
+    
+    /* Glow Effects */
+    --glow-primary: 0 0 40px hsl(217 91% 60% / 0.3);
+    --glow-accent: 0 0 40px hsl(262 83% 58% / 0.3);
+    --glow-subtle: 0 8px 32px hsl(217 91% 60% / 0.1);
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px hsl(222 84% 4.9% / 0.3);
+    --shadow-elevated: 0 8px 40px hsl(222 84% 4.9% / 0.4);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Typography */
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    
+    /* Sidebar */
+    --sidebar-background: 223 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 84% 4.9%;
+    --sidebar-accent: 223 47% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 223 47% 20%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    background: var(--gradient-hero);
+  }
+  
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+  
+  .glow-subtle {
+    box-shadow: var(--glow-subtle);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .card-hover {
+    transition: var(--transition-smooth);
+  }
+  
+  .card-hover:hover {
+    background: hsl(var(--card-hover));
+    box-shadow: var(--glow-subtle);
+    transform: translateY(-2px);
+  }
+}
